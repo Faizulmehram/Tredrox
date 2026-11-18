@@ -316,7 +316,11 @@
     opacity: 1;
     transform: none;
     filter: none;
-    clip-path: inset(-0.3em -0.3em -0.3em -0.3em);
+  }
+  /* Only headings clip (for the unmask). Once set, the clip sits far outside
+     the box so descenders and anything drawn past the edge stay whole. */
+  .js [data-reveal="heading"][data-revealed] {
+    clip-path: inset(-50% -25% -50% -25%);
   }
 }
 @media (prefers-reduced-motion: reduce) {
