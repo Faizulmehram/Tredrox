@@ -1,0 +1,36 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# env files (keep .env.example)
+.env
+.env*.local
+
+# logs
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# local tooling state
+/.taste-skill/
+.impeccable/config.local.json
+
+# local AI tooling (skills, agents and local settings for each editor)
+/.claude/
+/.agent/
+/.agents/
+/.cursor/
+/.gemini/
+/.codex/
+
+# Impeccable runtime state (design records in .impeccable/ are committed)
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/hook.cache.json

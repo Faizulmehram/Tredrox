@@ -1,0 +1,571 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Tredrox design tokens
+   Ground: near-black. One saturated colour (cobalt light).
+   Mint marks live / running state only.
+   ------------------------------------------------------------------ */
+@theme {
+  --color-ground: #05080d;
+  --color-ground-raised: #080c13;
+  --color-surface: #0b1119;
+  --color-surface-2: #101824;
+  --color-surface-3: #16202e;
+  --color-line: rgb(237 242 247 / 0.08);
+  --color-line-strong: rgb(237 242 247 / 0.15);
+  --color-fg: #edf2f7;
+  --color-fg-2: #c4ccd8;
+  --color-muted: #8b95a7;
+  --color-faint: #6b7588;
+  --color-cobalt: #2b63f5;
+  --color-cobalt-bright: #4d86ff;
+  --color-cobalt-soft: #9bbaff;
+  --color-cobalt-deep: #0d2a7a;
+  --color-mint: #5ef2c0;
+  --color-danger: #ff8a80;
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --radius-panel: 14px;
+  --radius-frame: 20px;
+
+  --animate-marquee: marquee 48s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+@layer base {
+  html {
+    background-color: var(--color-ground);
+    color: var(--color-fg);
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: #243044 var(--color-ground);
+    scrollbar-width: thin;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--color-ground);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: rgb(43 99 245 / 0.5);
+    color: #ffffff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ground);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1d2738;
+    border: 2px solid var(--color-ground);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2b3a52;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cobalt-bright);
+    outline-offset: 3px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  input,
+  textarea {
+    caret-color: var(--color-cobalt-bright);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Anchored sections clear the sticky header. */
+  section[id],
+  [data-anchor] {
+    scroll-margin-top: 72px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Layout primitives
+   ------------------------------------------------------------------ */
+@layer components {
+  /* The one content container: every block sits on these edges. */
+  .wrap {
+    width: 100%;
+    max-width: 1360px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 4vw, 48px);
+  }
+
+  /* Editorial type scale */
+  .type-display {
+    font-weight: 500;
+    font-size: clamp(2.75rem, 6.4vw, 6rem);
+    line-height: 0.96;
+    letter-spacing: -0.04em;
+  }
+
+  .type-h2 {
+    font-weight: 500;
+    font-size: clamp(2.25rem, 4.4vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+
+  .type-h3 {
+    font-weight: 500;
+    font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .type-lead {
+    font-size: clamp(1.0625rem, 1.25vw, 1.1875rem);
+    line-height: 1.6;
+    color: var(--color-fg-2);
+  }
+
+  .type-label {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    color: var(--color-muted);
+  }
+
+  .type-code {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    line-height: 1.55;
+    font-variant-ligatures: none;
+  }
+
+  /* Faint blueprint hairlines. Only inside drawing surfaces (diagram canvases, service stages, project artwork), never as page background. */
+  .blueprint {
+    background-image:
+      linear-gradient(to right, rgb(237 242 247 / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(237 242 247 / 0.045) 1px, transparent 1px);
+    background-size: 96px 96px;
+  }
+
+  /*
+    Panel: the shared dark layered surface. The border is lit from above
+    (brighter top edge, a cobalt catch at the bottom) and the face carries a
+    faint top sheen, so panels read as made objects rather than outlines.
+  */
+  .panel {
+    border: 1px solid transparent;
+    border-radius: var(--radius-panel);
+    background:
+      linear-gradient(180deg, rgb(255 255 255 / 0.035), rgb(255 255 255 / 0) 38%) padding-box,
+      linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+      linear-gradient(
+          180deg,
+          rgb(237 242 247 / 0.16),
+          rgb(237 242 247 / 0.06) 32%,
+          rgb(237 242 247 / 0.05) 70%,
+          rgb(77 134 255 / 0.22)
+        )
+        border-box;
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.04),
+      0 40px 80px -48px rgb(0 0 0 / 0.9);
+  }
+
+  /* A pool of cobalt light under a focal object. Place it behind something; never free-floating. */
+  .light-pool {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    border-radius: 999px;
+    background: radial-gradient(closest-side, rgb(43 99 245 / 0.2), rgb(43 99 245 / 0.06) 55%, transparent);
+    filter: blur(8px);
+  }
+
+  /* Underline that draws on hover. */
+  .link-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 260ms var(--ease-out), color 200ms ease;
+    padding-bottom: 2px;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .link-draw:hover {
+      background-size: 100% 1px;
+    }
+  }
+  .link-draw:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Live state dot (mint). */
+  .live-dot {
+    position: relative;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--color-mint);
+    box-shadow: 0 0 0 0 rgb(94 242 192 / 0.5);
+    animation: live-pulse 2.4s var(--ease-out) infinite;
+  }
+
+  /* Diagram pulses: a dash travelling along a path. */
+  .pulse-path {
+    stroke-dasharray: 10 190;
+    animation: pulse-travel 3.2s linear infinite;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Film grain over the ground: kills gradient banding, adds material.
+   ------------------------------------------------------------------ */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------------
+   Scroll reveals. Each element enters once. Hidden states apply only
+   after JavaScript has marked the page (html.js), so nothing is ever
+   hidden without it. Order comes from --i (set per element).
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    filter: blur(8px);
+    transition:
+      opacity 900ms var(--ease-out),
+      transform 1100ms var(--ease-out),
+      filter 900ms var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 90ms);
+  }
+  /* Headings unmask upward, like a line being set. */
+  .js [data-reveal="heading"] {
+    transform: translate3d(0, 0.35em, 0);
+    clip-path: inset(0 0 100% 0);
+    filter: none;
+    transition:
+      opacity 700ms var(--ease-out),
+      transform 1100ms var(--ease-out),
+      clip-path 1100ms var(--ease-out);
+  }
+  /* Large objects settle from slightly larger, out of focus. */
+  .js [data-reveal="object"] {
+    transform: scale(0.975) translate3d(0, 28px, 0);
+    filter: blur(12px);
+  }
+  .js [data-reveal][data-revealed] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    clip-path: inset(-0.3em -0.3em -0.3em -0.3em);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] {
+    transition: opacity 400ms ease;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Custom cursor (components/layout/CustomCursor). Active only with a fine
+   mouse pointer and full motion; the native caret returns in text fields.
+   ------------------------------------------------------------------ */
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
+}
+html.has-cursor :is(input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]), textarea, [contenteditable="true"]) {
+  cursor: text !important;
+}
+
+.cursor-ring,
+.cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 80;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  will-change: transform;
+}
+html[data-cursor="on"] .cursor-ring,
+html[data-cursor="on"] .cursor-dot {
+  opacity: 1;
+}
+
+.cursor-ring > span,
+.cursor-dot > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  border-radius: 999px;
+  translate: -50% -50%;
+}
+
+.cursor-ring > span {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgb(237 242 247 / 0.38);
+  background: rgb(237 242 247 / 0);
+  transition:
+    scale 260ms var(--ease-out),
+    background-color 200ms ease,
+    border-color 200ms ease,
+    opacity 200ms ease;
+}
+.cursor-ring[data-state="link"] > span {
+  scale: 1.6;
+  background: rgb(237 242 247 / 0.07);
+  border-color: rgb(237 242 247 / 0.6);
+}
+.cursor-ring[data-press] > span {
+  scale: 0.82;
+}
+.cursor-ring[data-state="link"][data-press] > span {
+  scale: 1.3;
+}
+.cursor-ring[data-state="text"] > span {
+  scale: 0.6;
+  opacity: 0;
+}
+
+.cursor-dot > span {
+  width: 6px;
+  height: 6px;
+  background: var(--color-fg);
+  transition:
+    scale 200ms var(--ease-out),
+    opacity 150ms ease;
+}
+.cursor-dot[data-state="link"] > span,
+.cursor-dot[data-state="text"] > span {
+  scale: 0;
+  opacity: 0;
+}
+
+/* Stack route: each station rings as the request passes it (synced to the 3.2s packet). */
+@keyframes station-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(77 134 255 / 0);
+  }
+  4% {
+    box-shadow: 0 0 0 7px rgb(77 134 255 / 0.32);
+  }
+  22% {
+    box-shadow: 0 0 0 16px rgb(77 134 255 / 0);
+  }
+}
+.station-ring {
+  animation: station-ring 3.2s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .station-ring,
+  .loop {
+    animation: none !important;
+  }
+}
+
+/* FAQ: animate the native <details> open/close where the browser supports it. */
+@supports (interpolate-size: allow-keywords) {
+  .faq {
+    interpolate-size: allow-keywords;
+  }
+  .faq::details-content {
+    height: 0;
+    overflow: clip;
+    opacity: 0;
+    transition:
+      height 320ms var(--ease-out),
+      opacity 240ms var(--ease-out),
+      content-visibility 320ms allow-discrete;
+  }
+  .faq[open]::details-content {
+    height: auto;
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq::details-content {
+      transition: opacity 200ms ease;
+    }
+  }
+}
+
+/* Loops pause while their diagram is off screen (see components/ui/InView). */
+[data-inview="false"] .pulse-path,
+[data-inview="false"] .live-dot,
+[data-inview="false"] .loop,
+[data-inview="false"] .station-ring {
+  animation-play-state: paused;
+}
+
+/* One-time reveal for framed media: a clip that opens upward once seen. */
+.reveal-clip {
+  clip-path: inset(0 0 0 0);
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-inview] .reveal-clip {
+    clip-path: inset(18% 0 0 0 round 14px);
+    opacity: 0.001;
+    transition:
+      clip-path 1100ms var(--ease-out),
+      opacity 700ms var(--ease-out);
+  }
+  [data-seen="true"] .reveal-clip {
+    clip-path: inset(0 0 0 0 round 14px);
+    opacity: 1;
+  }
+}
+
+@keyframes live-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(94 242 192 / 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgb(94 242 192 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(94 242 192 / 0);
+  }
+}
+
+@keyframes packet {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes pulse-travel {
+  from {
+    stroke-dashoffset: 200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Hero entrance: plays once on load, CSS only (compositor, no JS wait).
+   ------------------------------------------------------------------ */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.55em, 0);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.enter-line {
+  display: block;
+  animation: rise-in 900ms var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.enter-soft {
+  animation: rise-in 700ms var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+
+.enter-fade {
+  animation: fade-in 900ms var(--ease-out) both;
+  animation-delay: var(--d, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter-line,
+  .enter-soft {
+    animation-name: fade-in;
+    animation-duration: 400ms;
+    animation-delay: 0ms;
+  }
+  .enter-fade {
+    animation-duration: 400ms;
+    animation-delay: 0ms;
+  }
+  .live-dot {
+    animation: none;
+  }
+  .pulse-path {
+    animation: none;
+    stroke-dasharray: none;
+    opacity: 0.35;
+  }
+}

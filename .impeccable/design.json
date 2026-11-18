@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T00:00:00Z",
+  "title": "Design System: Tredrox Systems",
+  "extensions": {
+    "colorMeta": {
+      "ground": { "role": "neutral", "displayName": "Ground", "tonalRamp": ["#020306", "#05080d", "#080c13", "#0b1119", "#101824", "#16202e", "#1d2738", "#2b3a52"] },
+      "ground-raised": { "role": "neutral", "displayName": "Ground Raised", "tonalRamp": ["#05080d", "#080c13", "#0b1119", "#101824", "#16202e", "#1d2738", "#2b3a52", "#3a4a64"] },
+      "surface": { "role": "neutral", "displayName": "Surface", "tonalRamp": ["#05080d", "#080c13", "#0b1119", "#101824", "#16202e", "#1d2738", "#2b3a52", "#3a4a64"] },
+      "surface-2": { "role": "neutral", "displayName": "Surface 2", "tonalRamp": ["#05080d", "#080c13", "#0b1119", "#101824", "#16202e", "#1d2738", "#2b3a52", "#3a4a64"] },
+      "surface-3": { "role": "neutral", "displayName": "Surface 3", "tonalRamp": ["#05080d", "#080c13", "#0b1119", "#101824", "#16202e", "#1d2738", "#2b3a52", "#3a4a64"] },
+      "line": { "role": "neutral", "displayName": "Line (8% off-white)" },
+      "line-strong": { "role": "neutral", "displayName": "Line Strong (15% off-white)" },
+      "fg": { "role": "neutral", "displayName": "Off-White", "tonalRamp": ["#2b3a52", "#4a566a", "#6b7588", "#8b95a7", "#a9b2c0", "#c4ccd8", "#dbe1ea", "#edf2f7"] },
+      "fg-2": { "role": "neutral", "displayName": "Mist", "tonalRamp": ["#2b3a52", "#4a566a", "#6b7588", "#8b95a7", "#a9b2c0", "#c4ccd8", "#dbe1ea", "#edf2f7"] },
+      "muted": { "role": "neutral", "displayName": "Muted", "tonalRamp": ["#2b3a52", "#4a566a", "#6b7588", "#8b95a7", "#a9b2c0", "#c4ccd8", "#dbe1ea", "#edf2f7"] },
+      "faint": { "role": "neutral", "displayName": "Faint", "tonalRamp": ["#2b3a52", "#4a566a", "#6b7588", "#8b95a7", "#a9b2c0", "#c4ccd8", "#dbe1ea", "#edf2f7"] },
+      "cobalt": { "role": "primary", "displayName": "Cobalt Light", "tonalRamp": ["#071640", "#0d2a7a", "#1a44c2", "#2b63f5", "#4d86ff", "#7aa4ff", "#9bbaff", "#d6e3ff"] },
+      "cobalt-bright": { "role": "primary", "displayName": "Bright Cobalt", "tonalRamp": ["#071640", "#0d2a7a", "#1a44c2", "#2b63f5", "#4d86ff", "#7aa4ff", "#9bbaff", "#d6e3ff"] },
+      "cobalt-soft": { "role": "primary", "displayName": "Soft Cobalt", "tonalRamp": ["#071640", "#0d2a7a", "#1a44c2", "#2b63f5", "#4d86ff", "#7aa4ff", "#9bbaff", "#d6e3ff"] },
+      "cobalt-deep": { "role": "primary", "displayName": "Deep Cobalt", "tonalRamp": ["#071640", "#0d2a7a", "#1a44c2", "#2b63f5", "#4d86ff", "#7aa4ff", "#9bbaff", "#d6e3ff"] },
+      "mint": { "role": "secondary", "displayName": "Signal Mint", "tonalRamp": ["#06291e", "#0d4a37", "#15775a", "#22a87e", "#3fd6a3", "#5ef2c0", "#9bf7d8", "#d8fcf0"] },
+      "danger": { "role": "tertiary", "displayName": "Coral Signal", "tonalRamp": ["#3a0f0c", "#6b1d17", "#a52f25", "#d9493c", "#f26b5f", "#ff8a80", "#ffb4ad", "#ffe1de"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The hero h1 only, in three staggered lines." },
+      "headline": { "displayName": "Headline", "purpose": "Every section h2; a second sentence may be set in faint." },
+      "title": { "displayName": "Title", "purpose": "Service names, panel headings, step titles." },
+      "lead": { "displayName": "Lead", "purpose": "The paragraph under a heading, fg-2, 30-38rem wide." },
+      "body": { "displayName": "Body", "purpose": "Running copy; 0.9875rem relaxed inside panels." },
+      "label": { "displayName": "Label", "purpose": "Annotations, captions, chip text; sentence case, muted." },
+      "code": { "displayName": "Code", "purpose": "Geist Mono for tool calls, JSON, endpoints and data only." }
+    },
+    "shadows": [
+      { "name": "button-lift", "value": "0 1px 0 0 rgb(255 255 255 / 0.25) inset, 0 10px 30px -10px rgb(43 99 245 / 0.7)", "purpose": "Primary button at rest." },
+      { "name": "button-lift-hover", "value": "0 1px 0 0 rgb(255 255 255 / 0.3) inset, 0 14px 36px -10px rgb(43 99 245 / 0.85)", "purpose": "Primary button on hover." },
+      { "name": "focus-halo", "value": "0 0 0 4px rgba(43, 99, 245, 0.18)", "purpose": "Focused form field." },
+      { "name": "lit-node", "value": "0 0 0 6px rgba(43, 99, 245, 0.12)", "purpose": "Active step node in Process and Stack diagrams (0.18 for the strongest)." },
+      { "name": "lit-plate", "value": "0 0 0 1px rgba(77, 134, 255, 0.35), 0 40px 80px -30px rgba(43, 99, 245, 0.55)", "purpose": "Active plate of the Solutions exploded stack." },
+      { "name": "floating-readout", "value": "0 18px 40px -18px rgba(0, 0, 0, 0.9)", "purpose": "Glass readout chips pinned to the hero object." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Default for entrances, state changes and hover transitions." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "On-screen movement between two positions." },
+      { "name": "ease-drawer", "value": "cubic-bezier(0.32, 0.72, 0, 1)", "purpose": "Mobile menu wipe." },
+      { "name": "hero-rise", "value": "rise-in 900ms ease-out, staggered 80/180/260ms", "purpose": "Hero heading lines enter once on load with a 0.55em rise and 6px blur; fade only under reduced motion." },
+      { "name": "reveal-clip", "value": "clip-path inset(18% 0 0 0 round 14px) to inset(0), 1100ms ease-out", "purpose": "One-time reveal for framed media when first seen." },
+      { "name": "live-pulse", "value": "2.4s ease-out infinite", "purpose": "Mint live dot ring; off under reduced motion and off screen." },
+      { "name": "pulse-travel", "value": "3.2s linear infinite, dasharray 10 190", "purpose": "A dash travelling along diagram paths; static at 35% under reduced motion." },
+      { "name": "marquee", "value": "48s linear infinite", "purpose": "Technology strip in the hero's bottom band; pausable." },
+      { "name": "state-swap", "value": "260-400ms ease-out with 3-6px blur", "purpose": "Crossfade between panel states and readout values." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Cobalt pill with a lit underside; the one action colour. Title Case label, optional up-right arrow.",
+      "html": "<button class=\"ds-btn-primary\">Start a Project <svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 24px; border: none; border-radius: 999px; background: var(--color-cobalt, #2b63f5); color: #fff; font-family: var(--font-sans, Geist, system-ui, sans-serif); font-size: 1rem; font-weight: 500; letter-spacing: -0.01em; cursor: pointer; box-shadow: 0 1px 0 0 rgb(255 255 255 / 0.25) inset, 0 10px 30px -10px rgb(43 99 245 / 0.7); transition: transform 200ms cubic-bezier(0.23,1,0.32,1), background-color 200ms, box-shadow 200ms; } .ds-btn-primary svg { transition: transform 200ms cubic-bezier(0.23,1,0.32,1); } .ds-btn-primary:hover { background: #3a70ff; box-shadow: 0 1px 0 0 rgb(255 255 255 / 0.3) inset, 0 14px 36px -10px rgb(43 99 245 / 0.85); } .ds-btn-primary:hover svg { transform: translate(1px, -1px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-cobalt-bright, #4d86ff); outline-offset: 4px; } .ds-btn-primary:active { transform: scale(0.97); transition-duration: 100ms; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Translucent pill with a strong hairline; the quieter second action.",
+      "html": "<button class=\"ds-btn-secondary\">See What We Build</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid var(--color-line-strong, rgb(237 242 247 / 0.15)); background: rgb(255 255 255 / 0.03); color: var(--color-fg, #edf2f7); font-family: var(--font-sans, Geist, system-ui, sans-serif); font-size: 1rem; font-weight: 500; letter-spacing: -0.01em; cursor: pointer; backdrop-filter: blur(4px); transition: transform 200ms cubic-bezier(0.23,1,0.32,1), background-color 200ms, border-color 200ms; } .ds-btn-secondary:hover { border-color: rgb(255 255 255 / 0.25); background: rgb(255 255 255 / 0.07); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-cobalt-bright, #4d86ff); outline-offset: 4px; } .ds-btn-secondary:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Inline Link",
+      "kind": "custom",
+      "refersTo": "button-ghost",
+      "description": "Soft-cobalt text link whose underline draws left to right on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\">See how we work</a>",
+      "css": ".ds-link { color: var(--color-cobalt-soft, #9bbaff); font-family: var(--font-sans, Geist, system-ui, sans-serif); font-size: 0.9375rem; font-weight: 500; text-decoration: none; padding-bottom: 2px; background-image: linear-gradient(currentColor, currentColor); background-size: 0% 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 260ms cubic-bezier(0.23,1,0.32,1), color 200ms ease; } .ds-link:hover { color: var(--color-fg, #edf2f7); background-size: 100% 1px; } .ds-link:focus-visible { background-size: 100% 1px; outline: 2px solid var(--color-cobalt-bright, #4d86ff); outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "12px field on a 3% white fill; focus turns the border cobalt with a soft halo.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Full name</span><input class=\"ds-input\" placeholder=\"Jane Doe\" /></label>",
+      "css": ".ds-field { display: grid; gap: 8px; font-family: var(--font-sans, Geist, system-ui, sans-serif); } .ds-field-label { font-size: 0.8125rem; color: var(--color-fg-2, #c4ccd8); } .ds-input { height: 48px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--color-line, rgb(237 242 247 / 0.08)); background: rgb(255 255 255 / 0.03); color: var(--color-fg, #edf2f7); font: inherit; font-size: 0.9875rem; caret-color: var(--color-cobalt-bright, #4d86ff); transition: border-color 200ms cubic-bezier(0.23,1,0.32,1), background-color 200ms, box-shadow 200ms; } .ds-input::placeholder { color: var(--color-faint, #6b7588); } .ds-input:hover { border-color: rgb(255 255 255 / 0.2); } .ds-input:focus { outline: none; border-color: var(--color-cobalt-bright, #4d86ff); background: rgb(255 255 255 / 0.05); box-shadow: 0 0 0 4px rgba(43, 99, 245, 0.18); }"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Muted pill links; the active section carries a hairline pill with a 5% fill.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Home</a><a class=\"ds-nav-link is-active\" href=\"#\" aria-current=\"true\">Services</a><a class=\"ds-nav-link\" href=\"#\">Solutions</a><a class=\"ds-nav-link\" href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 4px; padding: 12px; background: var(--color-ground, #05080d); font-family: var(--font-sans, Geist, system-ui, sans-serif); } .ds-nav-link { padding: 8px 14px; border-radius: 999px; border: 1px solid transparent; font-size: 0.875rem; color: var(--color-muted, #8b95a7); text-decoration: none; transition: color 200ms, background-color 320ms cubic-bezier(0.23,1,0.32,1), border-color 320ms; } .ds-nav-link:hover { color: var(--color-fg, #edf2f7); } .ds-nav-link.is-active { color: var(--color-fg, #edf2f7); background: rgb(255 255 255 / 0.05); border-color: var(--color-line, rgb(237 242 247 / 0.08)); } .ds-nav-link:focus-visible { outline: 2px solid var(--color-cobalt-bright, #4d86ff); outline-offset: 3px; }"
+    },
+    {
+      "name": "Build Chip",
+      "kind": "chip",
+      "refersTo": "chip-build",
+      "description": "Hairline pill listing what a service produces, led by a cobalt check.",
+      "html": "<span class=\"ds-chip\"><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>Tool-using agents</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--color-line, rgb(237 242 247 / 0.08)); font-family: var(--font-sans, Geist, system-ui, sans-serif); font-size: 0.8125rem; color: var(--color-fg-2, #c4ccd8); } .ds-chip svg { color: var(--color-cobalt-bright, #4d86ff); flex-shrink: 0; }"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "The shared layered surface: 14px radius, hairline border, 3% top-wash. Drawn artefacts live inside it.",
+      "html": "<div class=\"ds-panel\"><h3 class=\"ds-panel-title\">Agent orchestration</h3><p class=\"ds-panel-body\">Agents that read, decide and act across your tools, with a person approving what matters.</p></div>",
+      "css": ".ds-panel { padding: 32px; border-radius: 14px; border: 1px solid var(--color-line, rgb(237 242 247 / 0.08)); background: linear-gradient(180deg, rgb(255 255 255 / 0.03), rgb(255 255 255 / 0) 40%), var(--color-surface, #0b1119); font-family: var(--font-sans, Geist, system-ui, sans-serif); } .ds-panel-title { margin: 0; font-size: 1.5rem; font-weight: 500; line-height: 1.2; letter-spacing: -0.02em; color: var(--color-fg, #edf2f7); } .ds-panel-body { margin: 12px 0 0; max-width: 36rem; font-size: 0.9875rem; line-height: 1.65; color: var(--color-fg-2, #c4ccd8); }"
+    },
+    {
+      "name": "Live Readout",
+      "kind": "custom",
+      "description": "Glass chip pinned to the hero object showing a running system; mint only for the live dot and returned result.",
+      "html": "<div class=\"ds-readout\"><div class=\"ds-readout-head\"><span class=\"ds-readout-name\"><span class=\"ds-live-dot\"></span>Agent run</span><span>Step 2 of 4</span></div><p class=\"ds-readout-line\">Looking up the order history</p><div class=\"ds-readout-bar\"><i class=\"on\"></i><i class=\"on\"></i><i></i><i></i></div></div>",
+      "css": ".ds-readout { width: 248px; padding: 12px; border-radius: 12px; border: 1px solid rgb(255 255 255 / 0.12); background: rgb(10 16 25 / 0.7); backdrop-filter: blur(12px); box-shadow: 0 18px 40px -18px rgba(0,0,0,0.9); font-family: var(--font-sans, Geist, system-ui, sans-serif); } .ds-readout-head { display: flex; justify-content: space-between; font-size: 0.6875rem; color: var(--color-muted, #8b95a7); } .ds-readout-name { display: inline-flex; align-items: center; gap: 8px; color: var(--color-fg-2, #c4ccd8); } .ds-live-dot { width: 7px; height: 7px; border-radius: 999px; background: var(--color-mint, #5ef2c0); animation: ds-pulse 2.4s cubic-bezier(0.23,1,0.32,1) infinite; } .ds-readout-line { margin: 8px 0 0; font-size: 0.8125rem; color: var(--color-fg, #edf2f7); } .ds-readout-bar { display: flex; gap: 4px; margin-top: 10px; } .ds-readout-bar i { flex: 1; height: 3px; border-radius: 999px; background: rgb(255 255 255 / 0.1); } .ds-readout-bar i.on { background: rgb(77 134 255 / 0.9); } @keyframes ds-pulse { 0% { box-shadow: 0 0 0 0 rgb(94 242 192 / 0.45); } 70% { box-shadow: 0 0 0 8px rgb(94 242 192 / 0); } 100% { box-shadow: 0 0 0 0 rgb(94 242 192 / 0); } } @media (prefers-reduced-motion: reduce) { .ds-live-dot { animation: none; } }"
+    },
+    {
+      "name": "Two-Tone Section Heading",
+      "kind": "custom",
+      "description": "Headline with its second sentence in faint: contrast from tone, never gradient text, no kicker above.",
+      "html": "<h2 class=\"ds-h2\">Intelligent solutions. <span>Engineered to scale.</span></h2>",
+      "css": ".ds-h2 { margin: 0; font-family: var(--font-sans, Geist, system-ui, sans-serif); font-size: clamp(2.25rem, 4.4vw, 4rem); font-weight: 500; line-height: 1.02; letter-spacing: -0.035em; color: var(--color-fg, #edf2f7); text-wrap: balance; } .ds-h2 span { color: var(--color-faint, #6b7588); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineered Stack",
+    "overview": "Tredrox builds systems in layers, so the interface is drawn the way an engineer draws a system: a near-black ground, hairline edges, diagrams and specs instead of brochure cards, and one glass object made of stacked plates. The brand mark (a T built from a wide top plate over two narrow plates) is the same object at every scale: the 24px wordmark glyph, the WebGL glass stack in the hero, and the scroll-driven exploded product stack in Solutions. Reusing that one form is how the system stays recognisable without ornament.\n\nThe surface is dark, quiet and dense with real artefacts. Depth comes from tonal layering (ground, surface, surface-2) and 1px low-opacity lines, with light used sparingly: cobalt light falls onto the hero object and pools at the top of a few panels; refraction belongs to the stacked-plate object alone, and backdrop blur is limited to the scrolled header, the secondary button and the readouts that annotate the hero object. Motion is functional and short: content enters once, live readouts tick while on screen, and every loop pauses off screen and under reduced motion.\n\nOwner-confirmed rejections carried into the visual system: purple-heavy gradients, decorative glowing circles, robot illustrations, generic AI stock imagery, Bootstrap-like layouts, a dashboard look, and rows of identical icon cards.",
+    "keyCharacteristics": [
+      "Near-black ground (#05080d) with tonal surfaces, never a light theme.",
+      "Cobalt is the only saturated colour for actions and checks; mint is reserved for live or running state.",
+      "Geist 500 headings, tightly tracked and oversized; Geist Mono only for code and data.",
+      "1px hairlines at 8% and 15% white; 14px panels inside 20px frames; pill-shaped controls.",
+      "The stacked-plate T is the single brand object, reused at every scale.",
+      "Blueprint grid lives only inside drawing surfaces."
+    ],
+    "rules": [
+      { "name": "The Mint Means Running Rule", "body": "Mint marks live or running state and nothing else: the pulsing live dot, a running step, a live row, a returned result. Checks, links and actions are cobalt. If nothing is executing, nothing is mint.", "section": "colors" },
+      { "name": "The One Saturated Colour Rule", "body": "Cobalt is the only saturated hue on the page. Everything else is the cool neutral ramp. No purple, no secondary accent gradients.", "section": "colors" },
+      { "name": "The Contrast From Tone Rule", "body": "When a heading carries two sentences, the second is set in faint, not in a gradient. Gradient text is never used. The shipped instance is the Services heading (\"Intelligent solutions. Engineered to scale.\").", "section": "typography" },
+      { "name": "The No Kicker Rule", "body": "Headings stand alone. No eyebrow, kicker or small uppercase label above a heading; if the heading needs context, the lead paragraph under it supplies it.", "section": "typography" },
+      { "name": "The Case Rule", "body": "Buttons are Title Case (\"Start a Project\", \"See What We Build\"); headings and everything else are sentence case.", "section": "typography" },
+      { "name": "The Light Falls On Something Rule", "body": "Cobalt glow always belongs to an object: a button, a lit node, the hero glass, the top of a panel. No free-floating glows or orbs on the ground.", "section": "elevation" },
+      { "name": "The Blueprint Inside The Drawing Rule", "body": "The 96px blueprint hairline grid (4.5% white) is used only inside drawing surfaces: diagram panels, service visual canvases, project artwork, and the backdrop the hero glass refracts. It is never a decorative page or section background, and never runs behind body text.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** keep the ground #05080d and build depth from surface steps and 1px lines at 8% / 15% white.",
+      "**Do** use cobalt for every action, check, focus ring and active node.",
+      "**Do** reserve mint for live or running state, paired with motion (the pulsing dot) or a running label.",
+      "**Do** set headings in Geist 500 with tight negative tracking, and give a two-sentence heading its second sentence in faint.",
+      "**Do** show work as drawn artefacts (diagrams, flows, code readouts) inside panels, with the blueprint grid confined to those drawing surfaces.",
+      "**Do** reuse the stacked-plate T for any brand object rather than inventing a new one.",
+      "**Do** pause every loop off screen and under reduced motion."
+    ],
+    "donts": [
+      "**Don't** use gradient text; contrast comes from tone.",
+      "**Don't** put a kicker, eyebrow or uppercase label above a heading.",
+      "**Don't** lay the blueprint grid behind a section or page as decoration, or behind headings and body text.",
+      "**Don't** use mint for checks, success decoration, links or syntax colouring.",
+      "**Don't** introduce purple-heavy gradients, decorative glowing circles, robot illustrations or generic AI stock imagery.",
+      "**Don't** build rows of identical icon cards or a dashboard look.",
+      "**Don't** spread glass: refraction belongs to the stacked-plate object, and backdrop blur stays on the scrolled header, the secondary button and the hero readouts."
+    ]
+  }
+}
